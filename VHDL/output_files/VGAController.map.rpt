@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGAController
-Mon Jul 18 20:26:30 2022
+Tue Jul 19 00:27:50 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,10 +13,13 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Prescaler:G1
+ 11. Port Connectivity Checks: "VGA_synt:G2"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 18 20:26:30 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 19 00:27:50 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; VGAController                               ;
 ; Top-level Entity Name              ; Top_Entity                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 28                                          ;
+; Total logic elements               ; 48                                          ;
+;     Total combinational functions  ; 45                                          ;
+;     Dedicated logic registers      ; 27                                          ;
+; Total registers                    ; 27                                          ;
+; Total pins                         ; 44                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -157,10 +160,12 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -169,50 +174,65 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------------+-----------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                  ; Library ;
 +----------------------------------+-----------------+-----------------------+-----------------------------------------------+---------+
+; Prescaler.vhd                    ; yes             ; User VHDL File        ; D:/Projects/VGAController/VHDL/Prescaler.vhd  ;         ;
 ; Top_Entity.vhd                   ; yes             ; User VHDL File        ; D:/Projects/VGAController/VHDL/Top_Entity.vhd ;         ;
-; ledtest.vhd                      ; yes             ; Auto-Found VHDL File  ; D:/Projects/VGAController/VHDL/ledtest.vhd    ;         ;
+; vga_synt.vhd                     ; yes             ; Auto-Found VHDL File  ; D:/Projects/VGAController/VHDL/vga_synt.vhd   ;         ;
 +----------------------------------+-----------------+-----------------------+-----------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                        ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-;                                             ;                      ;
-; Total combinational functions               ; 0                    ;
-; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 0                    ;
-;     -- 3 input functions                    ; 0                    ;
-;     -- <=2 input functions                  ; 0                    ;
-;                                             ;                      ;
-; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 0                    ;
-;     -- arithmetic mode                      ; 0                    ;
-;                                             ;                      ;
-; Total registers                             ; 0                    ;
-;     -- Dedicated logic registers            ; 0                    ;
-;     -- I/O registers                        ; 0                    ;
-;                                             ;                      ;
-; I/O pins                                    ; 28                   ;
-;                                             ;                      ;
-; Embedded Multiplier 9-bit elements          ; 0                    ;
-;                                             ;                      ;
-; Maximum fan-out node                        ; ARDUINO_IO[0]~output ;
-; Maximum fan-out                             ; 1                    ;
-; Total fan-out                               ; 45                   ;
-; Average fan-out                             ; 0.63                 ;
-+---------------------------------------------+----------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                               ;
++---------------------------------------------+-----------------------------+
+; Resource                                    ; Usage                       ;
++---------------------------------------------+-----------------------------+
+; Estimated Total logic elements              ; 48                          ;
+;                                             ;                             ;
+; Total combinational functions               ; 45                          ;
+; Logic element usage by number of LUT inputs ;                             ;
+;     -- 4 input functions                    ; 14                          ;
+;     -- 3 input functions                    ; 2                           ;
+;     -- <=2 input functions                  ; 29                          ;
+;                                             ;                             ;
+; Logic elements by mode                      ;                             ;
+;     -- normal mode                          ; 27                          ;
+;     -- arithmetic mode                      ; 18                          ;
+;                                             ;                             ;
+; Total registers                             ; 27                          ;
+;     -- Dedicated logic registers            ; 27                          ;
+;     -- I/O registers                        ; 0                           ;
+;                                             ;                             ;
+; I/O pins                                    ; 44                          ;
+;                                             ;                             ;
+; Embedded Multiplier 9-bit elements          ; 0                           ;
+;                                             ;                             ;
+; Maximum fan-out node                        ; Prescaler:G1|\incReg:reg[0] ;
+; Maximum fan-out                             ; 27                          ;
+; Total fan-out                               ; 247                         ;
+; Average fan-out                             ; 1.40                        ;
++---------------------------------------------+-----------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |Top_Entity                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 28   ; 0            ; 0          ; |Top_Entity         ; Top_Entity  ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name      ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
+; |Top_Entity                ; 45 (0)              ; 27 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |Top_Entity              ; Top_Entity  ; work         ;
+;    |Prescaler:G1|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Entity|Prescaler:G1 ; Prescaler   ; work         ;
+;    |VGA_synt:G2|           ; 44 (44)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Entity|VGA_synt:G2  ; VGA_synt    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; VGA_synt:G2|g[0..3]                   ; Stuck at GND due to stuck port data_in ;
+; VGA_synt:G2|b[0..3]                   ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 8 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -220,14 +240,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 27    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Prescaler:G1 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; n              ; 1     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_synt:G2"                                                                         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; reset ; Input  ; Info     ; Stuck at GND                                                                        ;
+; red   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; green ; Input  ; Info     ; Stuck at GND                                                                        ;
+; blue  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; row   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; col   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -235,14 +279,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 28                          ;
+; boundary_port         ; 44                          ;
+; cycloneiii_ff         ; 27                          ;
+;     ENA               ; 10                          ;
+;     plain             ; 17                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
+; cycloneiii_lcell_comb ; 46                          ;
+;     arith             ; 18                          ;
+;         2 data inputs ; 18                          ;
+;     normal            ; 28                          ;
 ;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 14                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -261,7 +314,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Jul 18 20:26:23 2022
+    Info: Processing started: Tue Jul 19 00:27:42 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGAController -c VGAController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -269,57 +322,72 @@ Info (12021): Found 2 design units, including 1 entities, in source file prescal
     Info (12022): Found design unit 1: Prescaler-LogicFunction File: D:/Projects/VGAController/VHDL/Prescaler.vhd Line: 13
     Info (12023): Found entity 1: Prescaler File: D:/Projects/VGAController/VHDL/Prescaler.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file top_entity.vhd
-    Info (12022): Found design unit 1: Top_Entity-LogicFunction File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 11
-    Info (12023): Found entity 1: Top_Entity File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 4
+    Info (12022): Found design unit 1: Top_Entity-LogicFunction File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 20
+    Info (12023): Found entity 1: Top_Entity File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
 Info (12127): Elaborating entity "Top_Entity" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at Top_Entity.vhd(8): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-Warning (12125): Using design file ledtest.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ledTest-LogicFunction File: D:/Projects/VGAController/VHDL/ledtest.vhd Line: 10
-    Info (12023): Found entity 1: ledTest File: D:/Projects/VGAController/VHDL/ledtest.vhd Line: 4
-Info (12128): Elaborating entity "ledTest" for hierarchy "ledTest:G1" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 21
-Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[13]" and its non-tri-state driver. File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
+Warning (10541): VHDL Signal Declaration warning at Top_Entity.vhd(17): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at Top_Entity.vhd(43): object "row" assigned a value but never read File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 43
+Warning (10036): Verilog HDL or VHDL warning at Top_Entity.vhd(44): object "col" assigned a value but never read File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 44
+Warning (10540): VHDL Signal Declaration warning at Top_Entity.vhd(47): used explicit default value for signal "colorR" because signal was never assigned a value File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 47
+Warning (10540): VHDL Signal Declaration warning at Top_Entity.vhd(48): used explicit default value for signal "colorG" because signal was never assigned a value File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 48
+Warning (10540): VHDL Signal Declaration warning at Top_Entity.vhd(49): used explicit default value for signal "colorB" because signal was never assigned a value File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 49
+Info (12128): Elaborating entity "Prescaler" for hierarchy "Prescaler:G1" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 54
+Warning (12125): Using design file vga_synt.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: VGA_synt-LogicFunction File: D:/Projects/VGAController/VHDL/vga_synt.vhd Line: 17
+    Info (12023): Found entity 1: VGA_synt File: D:/Projects/VGAController/VHDL/vga_synt.vhd Line: 6
+Info (12128): Elaborating entity "VGA_synt" for hierarchy "VGA_synt:G2" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 55
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[1]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "ARDUINO_IO[13]~synth" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 6
+    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[1]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
+    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 12
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 12
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 12
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 12
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 13
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 13
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 13
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 13
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 17
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 7
-Info (21057): Implemented 28 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 10 output pins
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 16
+Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 24 output pins
     Info (21060): Implemented 16 bidirectional pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 4786 megabytes
-    Info: Processing ended: Mon Jul 18 20:26:30 2022
-    Info: Elapsed time: 00:00:07
+    Info (21061): Implemented 49 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Tue Jul 19 00:27:50 2022
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:17
 
 

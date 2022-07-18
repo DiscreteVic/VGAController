@@ -4,11 +4,31 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "ARDUINO_IO[13]",
+					"name" : "VGA_R[0]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "VGA_R[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_HS",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_VS",
+					"strict" : false
+				},
+				{
+					"name" : "MAX10_CLK1_50",
 					"strict" : false
 				}
 			]
