@@ -14,7 +14,10 @@ ENTITY Top_Entity IS
         VGA_HS : OUT STD_LOGIC ;
         VGA_VS : OUT STD_LOGIC ;
         KEY : IN STD_LOGIC_VECTOR(1 downto 0) ;
-        LEDR : OUT STD_LOGIC_VECTOR(9 downto 0)) ;
+        LEDR : OUT STD_LOGIC_VECTOR(9 downto 0);
+        HEX0 : OUT STD_LOGIC_VECTOR(7 downto 0);
+        HEX2 : OUT STD_LOGIC_VECTOR(7 downto 0);
+        HEX1 : OUT STD_LOGIC_VECTOR(7 downto 0)) ;
 END Top_Entity ;
 
 ARCHITECTURE LogicFunction OF Top_Entity IS
@@ -38,22 +41,32 @@ ARCHITECTURE LogicFunction OF Top_Entity IS
             row : OUT STD_LOGIC_VECTOR(9 downto 0);
             col : OUT STD_LOGIC_VECTOR(9 downto 0)) ;
     END COMPONENT;
+
+    COMPONENT GraphicRAM is
+        PORT ( 
+            clk: IN STD_LOGIC;
+            r, g, b : OUT STD_LOGIC_VECTOR(3 downto 0);
+            row : IN STD_LOGIC_VECTOR(9 downto 0);
+            col : IN STD_LOGIC_VECTOR(9 downto 0));
+    END COMPONENT;
     
     signal clk : STD_LOGIC;
     signal row : STD_LOGIC_VECTOR(9 downto 0);
     signal col : STD_LOGIC_VECTOR(9 downto 0);
 
     
-    signal colorR : STD_LOGIC_VECTOR(3 downto 0) := X"F";
-    signal colorG : STD_LOGIC_VECTOR(3 downto 0) := X"0";
-    signal colorB : STD_LOGIC_VECTOR(3 downto 0) := X"0";
+    signal colorR : STD_LOGIC_VECTOR(3 downto 0);
+    signal colorG : STD_LOGIC_VECTOR(3 downto 0);
+    signal colorB : STD_LOGIC_VECTOR(3 downto 0);
     
+    type memRAM is array (0 to 639, 0 to 479) of STD_LOGIC_VECTOR(11 downto 0);
+    signal gMem : memRAM;
 
 BEGIN
 
     G1: Prescaler generic map (1) port map (MAX10_CLK1_50, clk);
     G2: VGA_synt port map (clk,'0', colorR, colorG, colorB, VGA_R, VGA_G, VGA_B,VGA_HS, VGA_VS, row, col);
-    
+    G3: GraphicRAM port map (clk, colorR, colorG, colorB, row, col);
 
 
 END LogicFunction ;
