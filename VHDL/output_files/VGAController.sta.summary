@@ -3,15 +3,15 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'Prescaler:G1|\incReg:reg[0]'
-Slack : -1.759
-TNS   : -36.350
+Slack : -3.678
+TNS   : -71.120
 
 Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK1_50'
 Slack : -0.692
 TNS   : -0.692
 
 Type  : Slow 1200mV 85C Model Hold 'Prescaler:G1|\incReg:reg[0]'
-Slack : 0.390
+Slack : 0.376
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK1_50'
@@ -24,18 +24,18 @@ TNS   : -4.222
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Prescaler:G1|\incReg:reg[0]'
 Slack : -1.222
-TNS   : -36.660
+TNS   : -41.548
 
 Type  : Slow 1200mV 0C Model Setup 'Prescaler:G1|\incReg:reg[0]'
-Slack : -1.512
-TNS   : -30.400
+Slack : -3.224
+TNS   : -61.183
 
 Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK1_50'
 Slack : -0.509
 TNS   : -0.509
 
 Type  : Slow 1200mV 0C Model Hold 'Prescaler:G1|\incReg:reg[0]'
-Slack : 0.358
+Slack : 0.345
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
@@ -48,11 +48,11 @@ TNS   : -4.222
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Prescaler:G1|\incReg:reg[0]'
 Slack : -1.222
-TNS   : -36.660
+TNS   : -41.548
 
 Type  : Fast 1200mV 0C Model Setup 'Prescaler:G1|\incReg:reg[0]'
-Slack : -0.330
-TNS   : -4.039
+Slack : -1.248
+TNS   : -18.410
 
 Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK1_50'
 Slack : -0.229
@@ -72,6 +72,6 @@ TNS   : -4.207
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Prescaler:G1|\incReg:reg[0]'
 Slack : -1.000
-TNS   : -30.000
+TNS   : -34.000
 
 ------------------------------------------------------------

@@ -1,5 +1,5 @@
 Timing Analyzer report for VGAController
-Wed Jul 20 23:57:06 2022
+Thu Jul 21 23:45:04 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -90,12 +90,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.12        ;
+; Average used               ; 1.18        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.8%      ;
+;     Processors 2-16        ;   1.2%      ;
 +----------------------------+-------------+
 
 
@@ -114,7 +114,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+-----------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                  ; Note ;
 +------------+-----------------+-----------------------------+------+
-; 362.45 MHz ; 362.45 MHz      ; Prescaler:G1|\incReg:reg[0] ;      ;
+; 213.77 MHz ; 213.77 MHz      ; Prescaler:G1|\incReg:reg[0] ;      ;
 +------------+-----------------+-----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -124,7 +124,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; Prescaler:G1|\incReg:reg[0] ; -1.759 ; -36.350       ;
+; Prescaler:G1|\incReg:reg[0] ; -3.678 ; -71.120       ;
 ; MAX10_CLK1_50               ; -0.692 ; -0.692        ;
 +-----------------------------+--------+---------------+
 
@@ -134,7 +134,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; Prescaler:G1|\incReg:reg[0] ; 0.390 ; 0.000         ;
+; Prescaler:G1|\incReg:reg[0] ; 0.376 ; 0.000         ;
 ; MAX10_CLK1_50               ; 0.598 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
@@ -157,7 +157,7 @@ No paths to report.
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
 ; MAX10_CLK1_50               ; -3.000 ; -4.222        ;
-; Prescaler:G1|\incReg:reg[0] ; -1.222 ; -36.660       ;
+; Prescaler:G1|\incReg:reg[0] ; -1.222 ; -41.548       ;
 +-----------------------------+--------+---------------+
 
 
@@ -172,7 +172,7 @@ No synchronizer chains to report.
 +------------+-----------------+-----------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                  ; Note ;
 +------------+-----------------+-----------------------------+------+
-; 398.09 MHz ; 398.09 MHz      ; Prescaler:G1|\incReg:reg[0] ;      ;
+; 236.74 MHz ; 236.74 MHz      ; Prescaler:G1|\incReg:reg[0] ;      ;
 +------------+-----------------+-----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -182,7 +182,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; Prescaler:G1|\incReg:reg[0] ; -1.512 ; -30.400       ;
+; Prescaler:G1|\incReg:reg[0] ; -3.224 ; -61.183       ;
 ; MAX10_CLK1_50               ; -0.509 ; -0.509        ;
 +-----------------------------+--------+---------------+
 
@@ -192,7 +192,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; Prescaler:G1|\incReg:reg[0] ; 0.358 ; 0.000         ;
+; Prescaler:G1|\incReg:reg[0] ; 0.345 ; 0.000         ;
 ; MAX10_CLK1_50               ; 0.472 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
@@ -215,7 +215,7 @@ No paths to report.
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
 ; MAX10_CLK1_50               ; -3.000 ; -4.222        ;
-; Prescaler:G1|\incReg:reg[0] ; -1.222 ; -36.660       ;
+; Prescaler:G1|\incReg:reg[0] ; -1.222 ; -41.548       ;
 +-----------------------------+--------+---------------+
 
 
@@ -230,7 +230,7 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; Prescaler:G1|\incReg:reg[0] ; -0.330 ; -4.039        ;
+; Prescaler:G1|\incReg:reg[0] ; -1.248 ; -18.410       ;
 ; MAX10_CLK1_50               ; -0.229 ; -0.229        ;
 +-----------------------------+--------+---------------+
 
@@ -263,7 +263,7 @@ No paths to report.
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
 ; MAX10_CLK1_50               ; -3.000 ; -4.207        ;
-; Prescaler:G1|\incReg:reg[0] ; -1.000 ; -30.000       ;
+; Prescaler:G1|\incReg:reg[0] ; -1.000 ; -34.000       ;
 +-----------------------------+--------+---------------+
 
 
@@ -278,12 +278,12 @@ No synchronizer chains to report.
 +------------------------------+---------+-------+----------+---------+---------------------+
 ; Clock                        ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack             ; -1.759  ; 0.172 ; N/A      ; N/A     ; -3.000              ;
+; Worst-case Slack             ; -3.678  ; 0.172 ; N/A      ; N/A     ; -3.000              ;
 ;  MAX10_CLK1_50               ; -0.692  ; 0.423 ; N/A      ; N/A     ; -3.000              ;
-;  Prescaler:G1|\incReg:reg[0] ; -1.759  ; 0.172 ; N/A      ; N/A     ; -1.222              ;
-; Design-wide TNS              ; -37.042 ; 0.0   ; 0.0      ; 0.0     ; -40.882             ;
+;  Prescaler:G1|\incReg:reg[0] ; -3.678  ; 0.172 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS              ; -71.812 ; 0.0   ; 0.0      ; 0.0     ; -45.77              ;
 ;  MAX10_CLK1_50               ; -0.692  ; 0.000 ; N/A      ; N/A     ; -4.222              ;
-;  Prescaler:G1|\incReg:reg[0] ; -36.350 ; 0.000 ; N/A      ; N/A     ; -36.660             ;
+;  Prescaler:G1|\incReg:reg[0] ; -71.120 ; 0.000 ; N/A      ; N/A     ; -41.548             ;
 +------------------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -620,7 +620,7 @@ No synchronizer chains to report.
 ; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 ; Prescaler:G1|\incReg:reg[0] ; MAX10_CLK1_50               ; 1        ; 1        ; 0        ; 0        ;
-; Prescaler:G1|\incReg:reg[0] ; Prescaler:G1|\incReg:reg[0] ; 496      ; 0        ; 0        ; 0        ;
+; Prescaler:G1|\incReg:reg[0] ; Prescaler:G1|\incReg:reg[0] ; 4021     ; 0        ; 0        ; 0        ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -631,7 +631,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 ; Prescaler:G1|\incReg:reg[0] ; MAX10_CLK1_50               ; 1        ; 1        ; 0        ; 0        ;
-; Prescaler:G1|\incReg:reg[0] ; Prescaler:G1|\incReg:reg[0] ; 496      ; 0        ; 0        ; 0        ;
+; Prescaler:G1|\incReg:reg[0] ; Prescaler:G1|\incReg:reg[0] ; 4021     ; 0        ; 0        ; 0        ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -657,8 +657,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 10    ; 10   ;
-; Unconstrained Output Port Paths ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 14    ; 14   ;
+; Unconstrained Output Port Paths ; 14    ; 14   ;
 +---------------------------------+-------+------+
 
 
@@ -677,6 +677,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
+; VGA_B[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_G[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_G[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_G[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -695,6 +699,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
+; VGA_B[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_G[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_G[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_G[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -714,10 +722,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jul 20 23:57:04 2022
+    Info: Processing started: Thu Jul 21 23:45:02 2022
 Info: Command: quartus_sta VGAController -c VGAController
 Info: qsta_default_script.tcl version: #1
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -732,15 +739,15 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.759
+Info (332146): Worst-case setup slack is -3.678
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.759             -36.350 Prescaler:G1|\incReg:reg[0] 
+    Info (332119):    -3.678             -71.120 Prescaler:G1|\incReg:reg[0] 
     Info (332119):    -0.692              -0.692 MAX10_CLK1_50 
-Info (332146): Worst-case hold slack is 0.390
+Info (332146): Worst-case hold slack is 0.376
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.390               0.000 Prescaler:G1|\incReg:reg[0] 
+    Info (332119):     0.376               0.000 Prescaler:G1|\incReg:reg[0] 
     Info (332119):     0.598               0.000 MAX10_CLK1_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
@@ -748,22 +755,22 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000              -4.222 MAX10_CLK1_50 
-    Info (332119):    -1.222             -36.660 Prescaler:G1|\incReg:reg[0] 
+    Info (332119):    -1.222             -41.548 Prescaler:G1|\incReg:reg[0] 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.512
+Info (332146): Worst-case setup slack is -3.224
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.512             -30.400 Prescaler:G1|\incReg:reg[0] 
+    Info (332119):    -3.224             -61.183 Prescaler:G1|\incReg:reg[0] 
     Info (332119):    -0.509              -0.509 MAX10_CLK1_50 
-Info (332146): Worst-case hold slack is 0.358
+Info (332146): Worst-case hold slack is 0.345
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.358               0.000 Prescaler:G1|\incReg:reg[0] 
+    Info (332119):     0.345               0.000 Prescaler:G1|\incReg:reg[0] 
     Info (332119):     0.472               0.000 MAX10_CLK1_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
@@ -771,14 +778,14 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000              -4.222 MAX10_CLK1_50 
-    Info (332119):    -1.222             -36.660 Prescaler:G1|\incReg:reg[0] 
+    Info (332119):    -1.222             -41.548 Prescaler:G1|\incReg:reg[0] 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.330
+Info (332146): Worst-case setup slack is -1.248
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.330              -4.039 Prescaler:G1|\incReg:reg[0] 
+    Info (332119):    -1.248             -18.410 Prescaler:G1|\incReg:reg[0] 
     Info (332119):    -0.229              -0.229 MAX10_CLK1_50 
 Info (332146): Worst-case hold slack is 0.172
     Info (332119):     Slack       End Point TNS Clock 
@@ -791,12 +798,12 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000              -4.207 MAX10_CLK1_50 
-    Info (332119):    -1.000             -30.000 Prescaler:G1|\incReg:reg[0] 
+    Info (332119):    -1.000             -34.000 Prescaler:G1|\incReg:reg[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4965 megabytes
-    Info: Processing ended: Wed Jul 20 23:57:06 2022
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4971 megabytes
+    Info: Processing ended: Thu Jul 21 23:45:04 2022
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
