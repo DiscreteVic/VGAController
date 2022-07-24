@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'Prescaler:G1|\incReg:reg[0]'
-Slack : -3.678
-TNS   : -71.120
+Slack : -15.146
+TNS   : -260.830
 
 Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK1_50'
-Slack : -0.692
-TNS   : -0.692
-
-Type  : Slow 1200mV 85C Model Hold 'Prescaler:G1|\incReg:reg[0]'
-Slack : 0.376
-TNS   : 0.000
+Slack : -0.415
+TNS   : -0.415
 
 Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK1_50'
-Slack : 0.598
+Slack : 0.309
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Prescaler:G1|\incReg:reg[0]'
+Slack : 0.559
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK1_50'
@@ -27,19 +27,19 @@ Slack : -1.222
 TNS   : -41.548
 
 Type  : Slow 1200mV 0C Model Setup 'Prescaler:G1|\incReg:reg[0]'
-Slack : -3.224
-TNS   : -61.183
+Slack : -13.699
+TNS   : -233.941
 
 Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK1_50'
-Slack : -0.509
-TNS   : -0.509
-
-Type  : Slow 1200mV 0C Model Hold 'Prescaler:G1|\incReg:reg[0]'
-Slack : 0.345
-TNS   : 0.000
+Slack : -0.255
+TNS   : -0.255
 
 Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
-Slack : 0.472
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Prescaler:G1|\incReg:reg[0]'
+Slack : 0.511
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
@@ -51,24 +51,24 @@ Slack : -1.222
 TNS   : -41.548
 
 Type  : Fast 1200mV 0C Model Setup 'Prescaler:G1|\incReg:reg[0]'
-Slack : -1.248
-TNS   : -18.410
+Slack : -7.097
+TNS   : -116.677
 
 Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK1_50'
-Slack : -0.229
-TNS   : -0.229
+Slack : -0.082
+TNS   : -0.082
 
 Type  : Fast 1200mV 0C Model Hold 'Prescaler:G1|\incReg:reg[0]'
-Slack : 0.172
+Slack : 0.253
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK1_50'
-Slack : 0.423
+Slack : 0.262
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
 Slack : -3.000
-TNS   : -4.207
+TNS   : -4.221
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Prescaler:G1|\incReg:reg[0]'
 Slack : -1.000

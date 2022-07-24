@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Jul 21 23:44:48 2022
+Analysis & Synthesis Status : Successful - Sun Jul 24 22:36:03 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : VGAController
 Top-level Entity Name : Top_Entity
 Family : MAX 10
-Total logic elements : 138
-    Total combinational functions : 138
+Total logic elements : 42,768
+    Total combinational functions : 42,768
     Dedicated logic registers : 35
 Total registers : 35
 Total pins : 68

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGAController
-Thu Jul 21 23:44:48 2022
+Sun Jul 24 22:36:03 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,12 +14,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Prescaler:G1
- 11. Port Connectivity Checks: "VGA_synt:G2"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: Prescaler:G1
+ 10. Port Connectivity Checks: "VGA_synt:G2"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -46,13 +45,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 21 23:44:48 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 24 22:36:03 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; VGAController                               ;
 ; Top-level Entity Name              ; Top_Entity                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 138                                         ;
-;     Total combinational functions  ; 138                                         ;
+; Total logic elements               ; 42,768                                      ;
+;     Total combinational functions  ; 42,768                                      ;
 ;     Dedicated logic registers      ; 35                                          ;
 ; Total registers                    ; 35                                          ;
 ; Total pins                         ; 68                                          ;
@@ -166,7 +165,13 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processors 3-16        ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -182,36 +187,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                               ;
-+---------------------------------------------+-----------------------------+
-; Resource                                    ; Usage                       ;
-+---------------------------------------------+-----------------------------+
-; Estimated Total logic elements              ; 138                         ;
-;                                             ;                             ;
-; Total combinational functions               ; 138                         ;
-; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 77                          ;
-;     -- 3 input functions                    ; 27                          ;
-;     -- <=2 input functions                  ; 34                          ;
-;                                             ;                             ;
-; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 120                         ;
-;     -- arithmetic mode                      ; 18                          ;
-;                                             ;                             ;
-; Total registers                             ; 35                          ;
-;     -- Dedicated logic registers            ; 35                          ;
-;     -- I/O registers                        ; 0                           ;
-;                                             ;                             ;
-; I/O pins                                    ; 68                          ;
-;                                             ;                             ;
-; Embedded Multiplier 9-bit elements          ; 0                           ;
-;                                             ;                             ;
-; Maximum fan-out node                        ; Prescaler:G1|\incReg:reg[0] ;
-; Maximum fan-out                             ; 35                          ;
-; Total fan-out                               ; 650                         ;
-; Average fan-out                             ; 2.00                        ;
-+---------------------------------------------+-----------------------------+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 42,768               ;
+;                                             ;                      ;
+; Total combinational functions               ; 42768                ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 37121                ;
+;     -- 3 input functions                    ; 4720                 ;
+;     -- <=2 input functions                  ; 927                  ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 42730                ;
+;     -- arithmetic mode                      ; 38                   ;
+;                                             ;                      ;
+; Total registers                             ; 35                   ;
+;     -- Dedicated logic registers            ; 35                   ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 68                   ;
+;                                             ;                      ;
+; Embedded Multiplier 9-bit elements          ; 0                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; GraphicRAM:G3|Add1~0 ;
+; Maximum fan-out                             ; 11363                ;
+; Total fan-out                               ; 164670               ;
+; Average fan-out                             ; 3.83                 ;
++---------------------------------------------+----------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -219,10 +224,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name       ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------+-------------+--------------+
-; |Top_Entity                ; 138 (0)             ; 35 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |Top_Entity               ; Top_Entity  ; work         ;
-;    |GraphicRAM:G3|         ; 46 (46)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Entity|GraphicRAM:G3 ; GraphicRAM  ; work         ;
+; |Top_Entity                ; 42768 (0)           ; 35 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |Top_Entity               ; Top_Entity  ; work         ;
+;    |GraphicRAM:G3|         ; 42655 (42655)       ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Entity|GraphicRAM:G3 ; GraphicRAM  ; work         ;
 ;    |Prescaler:G1|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Entity|Prescaler:G1  ; Prescaler   ; work         ;
-;    |VGA_synt:G2|           ; 91 (91)             ; 34 (34)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Entity|VGA_synt:G2   ; VGA_synt    ; work         ;
+;    |VGA_synt:G2|           ; 112 (112)           ; 34 (34)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Entity|VGA_synt:G2   ; VGA_synt    ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -233,23 +238,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 35    ;
-; Number of registers using Synchronous Clear  ; 6     ;
-; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |Top_Entity|VGA_synt:G2|g[0] ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; Yes        ; |Top_Entity|VGA_synt:G2|r[1] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 
 
 +-----------------------------------------------------------+
@@ -279,21 +274,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 68                          ;
 ; cycloneiii_ff         ; 35                          ;
 ;     ENA               ; 10                          ;
-;     SCLR SLD          ; 6                           ;
-;     plain             ; 19                          ;
+;     plain             ; 25                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 139                         ;
-;     arith             ; 18                          ;
-;         2 data inputs ; 18                          ;
-;     normal            ; 121                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 27                          ;
-;         4 data inputs ; 77                          ;
+; cycloneiii_lcell_comb ; 42769                       ;
+;     arith             ; 38                          ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 12                          ;
+;     normal            ; 42731                       ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 896                         ;
+;         3 data inputs ; 4708                        ;
+;         4 data inputs ; 37121                       ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.27                        ;
+; Max LUT depth         ; 20.20                       ;
+; Average LUT depth     ; 15.50                       ;
 +-----------------------+-----------------------------+
 
 
@@ -302,7 +297,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:16     ;
+; Top            ; 00:28:31     ;
 +----------------+--------------+
 
 
@@ -312,7 +307,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Jul 21 23:43:24 2022
+    Info: Processing started: Sun Jul 24 22:07:22 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGAController -c VGAController
 Warning (125092): Tcl Script File test.qip not found
     Info (125063): set_global_assignment -name QIP_FILE test.qip
@@ -337,19 +332,10 @@ Warning (10541): VHDL Signal Declaration warning at Top_Entity.vhd(20): used imp
 Info (12128): Elaborating entity "Prescaler" for hierarchy "Prescaler:G1" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 67
 Info (12128): Elaborating entity "VGA_synt" for hierarchy "VGA_synt:G2" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 68
 Info (12128): Elaborating entity "GraphicRAM" for hierarchy "GraphicRAM:G3" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 69
-Warning (10541): VHDL Signal Declaration warning at GraphicRAM.vhd(21): used implicit default value for signal "ramR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Projects/VGAController/VHDL/GraphicRAM.vhd Line: 21
-Warning (10541): VHDL Signal Declaration warning at GraphicRAM.vhd(21): used implicit default value for signal "ramG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Projects/VGAController/VHDL/GraphicRAM.vhd Line: 21
-Warning (10541): VHDL Signal Declaration warning at GraphicRAM.vhd(21): used implicit default value for signal "ramB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Projects/VGAController/VHDL/GraphicRAM.vhd Line: 21
-Warning (113016): Width of data items in "memR.mif" is smaller than the memory width. Padding data items with 0 on MSB to fit in memory.  File: D:/Projects/VGAController/VHDL/memR.mif Line: 24
-Critical Warning (127005): Memory depth (512) in the design file differs from memory depth (480) in the Memory Initialization File "D:/Projects/VGAController/VHDL/memR.mif" -- setting initial value for remaining addresses to 0
-Warning (113016): Width of data items in "memG.mif" is smaller than the memory width. Padding data items with 0 on MSB to fit in memory.  File: D:/Projects/VGAController/VHDL/memG.mif Line: 24
-Critical Warning (127005): Memory depth (512) in the design file differs from memory depth (480) in the Memory Initialization File "D:/Projects/VGAController/VHDL/memG.mif" -- setting initial value for remaining addresses to 0
-Warning (113016): Width of data items in "memB.mif" is smaller than the memory width. Padding data items with 0 on MSB to fit in memory.  File: D:/Projects/VGAController/VHDL/memB.mif Line: 6
-Critical Warning (127005): Memory depth (512) in the design file differs from memory depth (480) in the Memory Initialization File "D:/Projects/VGAController/VHDL/memB.mif" -- setting initial value for remaining addresses to 0
-Info (276014): Found 3 instances of uninferred RAM logic
-    Info (276013): RAM logic "GraphicRAM:G3|ramR" is uninferred because MIF is not supported for the selected family File: D:/Projects/VGAController/VHDL/GraphicRAM.vhd Line: 21
-    Info (276013): RAM logic "GraphicRAM:G3|ramG" is uninferred because MIF is not supported for the selected family File: D:/Projects/VGAController/VHDL/GraphicRAM.vhd Line: 21
-    Info (276013): RAM logic "GraphicRAM:G3|ramB" is uninferred because MIF is not supported for the selected family File: D:/Projects/VGAController/VHDL/GraphicRAM.vhd Line: 21
+Warning (10541): VHDL Signal Declaration warning at GraphicRAM.vhd(21): used implicit default value for signal "ram" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Projects/VGAController/VHDL/GraphicRAM.vhd Line: 21
+Critical Warning (127005): Memory depth (524288) in the design file differs from memory depth (307200) in the Memory Initialization File "D:/Projects/VGAController/VHDL/mem.mif" -- setting initial value for remaining addresses to 0
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276013): RAM logic "GraphicRAM:G3|ram" is uninferred because MIF is not supported for the selected family File: D:/Projects/VGAController/VHDL/GraphicRAM.vhd Line: 21
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
     Warning (13040): bidirectional pin "ARDUINO_IO[1]" has no driver File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 10
@@ -409,15 +395,15 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ADC_CLK_10" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 8
     Warning (15610): No output dependent on input pin "KEY[0]" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 16
     Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Projects/VGAController/VHDL/Top_Entity.vhd Line: 16
-Info (21057): Implemented 206 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 42836 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 48 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 138 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 70 warnings
-    Info: Peak virtual memory: 4888 megabytes
-    Info: Processing ended: Thu Jul 21 23:44:48 2022
-    Info: Elapsed time: 00:01:24
-    Info: Total CPU time (on all processors): 00:01:34
+    Info (21061): Implemented 42768 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
+    Info: Peak virtual memory: 5499 megabytes
+    Info: Processing ended: Sun Jul 24 22:36:03 2022
+    Info: Elapsed time: 00:28:41
+    Info: Total CPU time (on all processors): 00:28:51
 
 

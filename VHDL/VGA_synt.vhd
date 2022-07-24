@@ -26,7 +26,7 @@ BEGIN
                 IF reset='1'
                     THEN hCounter <= (others => '0');
                     ELSE IF (clk'event and clk='1')
-                        THEN IF hCounter=799
+                        THEN IF hCounter=799 -- Pixels with sync, front and back porch
                             THEN hCounter <= (others => '0');
                             ELSE hCounter <= hCounter + 1;
                         END IF;
@@ -49,7 +49,7 @@ BEGIN
                 IF reset='1'
                     THEN vCounter <= (others => '0');
                     ELSE IF (clk'event and clk='1')
-                        THEN IF hCounter=699
+                        THEN IF hCounter=699  -- Pixels with sync, front and back porch
                             THEN IF vCounter=524
                                 THEN vCounter <= (others => '0');
                                 ELSE vCounter <= vCounter + 1;
@@ -75,13 +75,13 @@ BEGIN
                     THEN hsync <= '0';
                         vsync <= '0';
                     ELSE IF (clk'event and clk='1')
-                        THEN IF (hCounter<=755 and hCounter>=659)
+                        THEN IF (hCounter<783 and hCounter>95) -- just at active pixels, sync before porch after
                             THEN hsync <= '0';
-                            else hsync <= '1';
+                            ELSE hsync <= '1';
                         END IF;
-                        IF (vCounter<=494 and vCounter>=493)
+                        IF (vCounter<514 and vCounter>1)
                             THEN vsync <= '0';
-                            else vsync <= '1';
+                            ELSE vsync <= '1';
                         END IF;                            
                     END IF ;
                 END IF ;
