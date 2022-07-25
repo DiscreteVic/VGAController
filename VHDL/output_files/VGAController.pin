@@ -1,4 +1,4 @@
- -- Copyright (C) 2020  Intel Corporation. All rights reserved.
+ -- Copyright (C) 2022  Intel Corporation. All rights reserved.
  -- Your use of Intel Corporation's design tools, logic functions 
  -- and other software and tools, and any partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -65,7 +65,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 CHIP  "VGAController"  ASSIGNED TO AN: 10M50DAF484C6GES
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -329,7 +329,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : K14       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : K15       :        :                   :         : 6         :                
 VCCIO6                       : K16       : power  :                   : 3.3V    : 6         :                
 VCCIO6                       : K17       : power  :                   : 3.3V    : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K18       :        :                   :         : 6         :                
+KEY[1]                       : K18       : input  : 3.3 V Schmitt Trigger :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K19       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K20       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K21       :        :                   :         : 6         :                
@@ -373,7 +373,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : M14       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : M15       :        :                   :         : 6         :                
 GND                          : M16       : gnd    :                   :         :           :                
 VCCIO6                       : M17       : power  :                   : 3.3V    : 6         :                
-KEY[1]                       : M18       : input  : 3.3 V Schmitt Trigger :         : 6         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M18       :        :                   :         : 6         :                
 GND                          : M19       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M20       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M21       :        :                   :         : 5         :                

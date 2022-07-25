@@ -1,10 +1,10 @@
-/* Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition */
+/* Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484ES) Path("D:/Projects/VGAController/VHDL/output_files/") File("VGAController.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484ES) Path("/home/vic/projects/VGAController/VHDL/output_files/") File("VGAController.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

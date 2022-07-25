@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun Jul 24 22:59:57 2022
-Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fitter Status : Successful - Mon Jul 25 22:09:37 2022
+Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : VGAController
 Top-level Entity Name : Top_Entity
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 42,770 / 49,760 ( 86 % )
-    Total combinational functions : 42,769 / 49,760 ( 86 % )
+Total logic elements : 34,806 / 49,760 ( 70 % )
+    Total combinational functions : 34,805 / 49,760 ( 70 % )
     Dedicated logic registers : 35 / 49,760 ( < 1 % )
 Total registers : 35
 Total pins : 68 / 360 ( 19 % )

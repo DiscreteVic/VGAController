@@ -3,7 +3,7 @@ import matplotlib
 import numpy as np
 
 #read image 
-img = cv2.imread('/mnt/d/Projects/VGAController/img2mem/test.jpg')
+img = cv2.imread('test.jpg')
 
 newimg = np.zeros((480,640,3), np.uint8)
  
